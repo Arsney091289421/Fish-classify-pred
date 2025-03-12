@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Species Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        form { display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, button { display: block; width: 100%; margin-bottom: 10px; padding: 10px; }
+        button { background-color: #007BFF; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h2>Fish Species Predictor</h2>
+    <form id="predictForm">
+        <input type="number" name="Weight" placeholder="Weight (g)" required>
+        <input type="number" name="Length1" placeholder="Length1 (cm)" required>
+        <input type="number" name="Length2" placeholder="Length2 (cm)" required>
+        <input type="number" name="Length3" placeholder="Length3 (cm)" required>
+        <input type="number" name="Height" placeholder="Height (cm)" required>
+        <input type="number" name="Width" placeholder="Width (cm)" required>
+        <button type="submit">Predict</button>
+    </form>
+    <h3 id="result"></h3>
+
+    <script>
+        document.getElementById("predictForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 防止页面刷新
+            let formData = new FormData(this);
+
+            fetch("/predict", { method: "POST", body: formData })
+            .then(response => response.json())
+            .then(data => { document.getElementById("result").innerText = "Predicted Species: " + data.prediction; })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>
