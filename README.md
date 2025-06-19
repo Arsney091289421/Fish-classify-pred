@@ -11,8 +11,8 @@ This project is a **machine learning-based fish species classification model**, 
 - **Frontend**: HTML + CSS + JavaScript
 - **Backend**: Flask API (Python)
 - **Deployment Platform**: Heroku  
-- **Live App URL**: [Click Here](https://fish-predictor-2025-65a68cbab75e.herokuapp.com/)
-
+- **Live App URL**: [Currently unavailable (link)](https://fish-predictor-2025-65a68cbab75e.herokuapp.com/)  
+  *Note: The app is currently inactive as Heroku has discontinued its free tier. Please contact me if you'd like a live demo or deployment support.*
 ---
 
 ## Project Structure
