@@ -4,7 +4,7 @@ This project is a **machine learning-based fish species classification model**, 
 
 ---
 
-## ** Project Overview**
+## Project Overview
 - **Problem Statement**: Given fish measurement data (Weight, Length, Height, Width), predict the species of the fish.
 - **Model Type**: **Classification** (Multi-class prediction of fish species).
 - **Machine Learning Algorithm**: `RandomForestClassifier`
@@ -15,7 +15,7 @@ This project is a **machine learning-based fish species classification model**, 
 
 ---
 
-## ** Project Structure**
+## Project Structure
 ```
  Fish Species Predictor
 ├── 📂 templates          # Frontend files (HTML, CSS)
@@ -31,22 +31,22 @@ This project is a **machine learning-based fish species classification model**, 
 
 ---
 
-## **🛠 How It Works**
-### **1 Model Training**
+## How It Works
+### 1 Model Training
 - The model was trained using the **Fish Market dataset** from [Kaggle](https://www.kaggle.com/aungpyaeap/fish-market).
 - Features: `Weight`, `Length1`, `Length2`, `Length3`, `Height`, `Width`
 - The data was **standardized** using `StandardScaler()`, and labels were **encoded** using `LabelEncoder()`.
 - A `RandomForestClassifier` was trained and saved as `fish_species_classifier.pkl`.
 
-### **2 Flask API**
+### 2 Flask API
 - The Flask app (`app.py`) loads the trained model and exposes a **REST API**.
 - It receives input data from the **frontend form** and returns a **predicted fish species**.
 
-### **3 Frontend (User Interface)**
+### 3 Frontend (User Interface)
 - Users enter **fish measurements** in a simple web form (`index.html`).
 - The form sends data to the Flask backend, which returns a prediction.
 
-### **4 Deployment on Heroku**
+### 4 Deployment on Heroku
 - The app was containerized and deployed on **Heroku**.
 - Used `gunicorn` as the WSGI server.
 - `Procfile` specifies the entry point for Heroku:
@@ -56,25 +56,25 @@ This project is a **machine learning-based fish species classification model**, 
 
 ---
 
-## **How to Run Locally**
-### **1 Clone the Repository**
+## How to Run Locally
+### 1 Clone the Repository
 ```bash
 git clone https://github.com/Arsney091289421/Fish-classify-pred.git
 cd Fish-classify-pred
 ```
 
-### **2 Create a Virtual Environment**
+### 2 Create a Virtual Environment
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ```
 
-### **3 Install Dependencies**
+### 3 Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### **4 Run Flask App**
+### 4 Run Flask App
 ```bash
 python app.py
 ```
@@ -82,8 +82,8 @@ python app.py
 
 ---
 
-## ** Deployment on Heroku**
-### **1 Install Heroku CLI**
+## Deployment on Heroku
+### 1 Install Heroku CLI
 ```bash
 brew tap heroku/brew && brew install heroku  # For macOS
 ```
@@ -92,7 +92,7 @@ or
 choco install heroku-cli  # For Windows
 ```
 
-### **2 Deploy to Heroku**
+### 2 Deploy to Heroku
 ```bash
 heroku login
 heroku create fish-predictor-2025
